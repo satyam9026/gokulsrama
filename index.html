@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trade with GOKUL  (STOCK LEARNER)</title>
+<meta name="description" content="Educational market updates and a Telegram learning community.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#e6b422;
+    --gold-soft:#f3d27a;
+    --brand:#00b0ff;
+    --brand-deep:#0077c8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;background:#000;color:#fff}
+  main{
+    position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;padding:40px 16px;
+    /* Replace with your own image: background:url('trading-bg.jpg') center/cover; */
+    background:
+      repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 60px),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 60px),
+      linear-gradient(135deg,#041220,#0a1f33 45%,#14100a);
+  }
+  main::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at top,rgba(0,0,0,.55),rgba(0,0,0,.95));
+  }
+  .card{
+    position:relative;z-index:1;width:100%;max-width:440px;text-align:center;
+    padding:36px;border-radius:26px;border:1px solid rgba(230,180,34,.3);
+    background:rgba(255,255,255,.06);
+    box-shadow:0 30px 80px rgba(0,0,0,.9);
+    backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+    animation:fadeUp .8s ease both;
+  }
+  @media(min-width:640px){.card{padding:44px}}
+
+  .avatar-wrap{display:flex;justify-content:center;margin-bottom:20px}
+  .glow{border-radius:50%;background:#000;animation:glow 3s ease-in-out infinite}
+  .avatar{
+    width:110px;height:110px;border-radius:50%;border:3px solid var(--gold);
+    object-fit:cover;display:block;transform:scale(1.05);animation:float 4s ease-in-out infinite;
+    background:linear-gradient(135deg,#222,#444);
+  }
+  @media(min-width:640px){.avatar{width:125px;height:125px}}
+
+  h1{font-family:'Oxanium',sans-serif;font-size:24px;font-weight:700;font-style:italic;letter-spacing:.03em;color:var(--gold)}
+  @media(min-width:640px){h1{font-size:25px}}
+  .sub{margin-top:4px;font-family:'Oxanium',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.22em;color:var(--gold-soft)}
+  h3{margin-top:8px;font-family:'Oxanium',sans-serif;font-size:16px;font-weight:600}
+  @media(min-width:640px){h3{font-size:18px}}
+
+  .tags{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .tag{
+    border:1px solid rgba(230,180,34,.3);background:rgba(230,180,34,.1);color:var(--gold-soft);
+    border-radius:999px;padding:4px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;
+  }
+
+  .cta-wrap{margin-top:28px}
+  .cta{
+    position:relative;overflow:hidden;display:inline-flex;width:100%;align-items:center;justify-content:center;gap:8px;
+    padding:16px 24px;border-radius:16px;text-decoration:none;color:#fff;
+    font-family:'Oxanium',sans-serif;font-size:14px;font-weight:700;
+    background:linear-gradient(135deg,var(--brand),var(--brand-deep));
+    box-shadow:0 15px 40px rgba(0,176,255,.55);
+    transition:all .3s ease;
+  }
+  @media(min-width:640px){.cta{font-size:15px}}
+  .cta:hover{transform:translateY(-4px);box-shadow:0 25px 60px rgba(0,176,255,.9)}
+  .cta::after{
+    content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+    transform:skewX(-20deg);animation:shimmer 3s ease-in-out infinite;
+  }
+
+  .badge{margin-top:24px}
+  .badge span{
+    display:inline-block;border-radius:8px;padding:6px 16px;font-size:13px;font-weight:700;color:#d60000;
+    background:linear-gradient(135deg,#fff,#f3f3f3);box-shadow:0 5px 20px rgba(0,0,0,.4);
+  }
+
+  ul{margin-top:24px;list-style:none;font-size:14px}
+  li{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px}
+  li:first-child{margin-top:0}
+  li i{font-style:normal;color:var(--brand)}
+
+  .disc{margin-top:24px;font-size:12px;line-height:1.6;color:rgba(255,255,255,.7)}
+  .note{margin-top:12px;font-size:11px;color:rgba(255,255,255,.5)}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @keyframes float{0%,100%{transform:scale(1.05) translateY(0)}50%{transform:scale(1.05) translateY(-6px)}}
+  @keyframes glow{
+    0%,100%{box-shadow:0 0 18px rgba(230,180,34,.45)}
+    50%{box-shadow:0 0 40px rgba(230,180,34,.85)}
+  }
+  @keyframes shimmer{0%{left:-120%}60%,100%{left:160%}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <section class="card">
+    <div class="avatar-wrap">
+      <div class="glow">
+        <!-- Replace src with your own profile photo, e.g. profile.jpg -->
+        <img class="avatar" src="image.png" alt="Trade with Gautam jhaa profile photo" width="125" height="125">
+      </div>
+    </div>
+
+    <h1>Trade with GOKUL </h1>
+    <p class="sub">STOCK LEARNER</p>
+    <h3>🔥 DAILY MARKET UPDATES 🔥</h3>
+
+    <div class="tags">
+      <span class="tag">NIFTY</span>
+      <span class="tag">BANKNIFTY</span>
+      <span class="tag">STOCK OPTIONS</span>
+    </div>
+
+    <div class="cta-wrap">
+      <!-- Replace with your own Telegram invite link -->
+      <a class="cta" href="https://t.me/+Rj_Jd2olqKQ4ZThl">🚀 Join Free Telegram Channel</a>
+    </div>
+
+    <div class="badge"><span>📚 Educational Market Updates</span></div>
+
+    <ul>
+      <li><i>✔</i>Stop Loss &amp; Risk Management Concepts</li>
+      <li><i>✔</i>Daily Market Updates — Free</li>
+      <li><i>✔</i>For Study &amp; Educational Purpose Only</li>
+    </ul>
+
+    <p class="disc">⚠️ Disclaimer: We are not SEBI registered advisors. All content is for educational purposes only and is not investment advice. No profits or returns are guaranteed. Trading in stocks and F&amp;O involves high risk of loss. Please consult a SEBI registered advisor before investing.</p>
+    <p class="note">This site is not part of or endorsed by Meta / Facebook / Telegram.</p>
+  </section>
+</main>
+</body>
+</html>
